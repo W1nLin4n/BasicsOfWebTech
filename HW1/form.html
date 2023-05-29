@@ -8,50 +8,50 @@
 </head>
 <body>
     <h2>Add teacher</h2>
-    <form id="registration_form" name="registration_form">
-        <label for="full_name">Full name:</label>
-        <br>
-        <input type="text" id="full_name" name="full_name" placeholder="John Doe" required>
-        <br>
-        <label for="sex">Sex:</label>
-        <br>
-        <select id="sex" name="sex" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-        <br>
-        <label for="birth_date">Date of birth:</label>
-        <br>
-        <input type="date" id="birth_date" name="birth_date" required>
-        <br>
-        <label for="email">Email:</label>
-        <br>
-        <input type="email" id="email" name="email" placeholder="name@example.com" required>
-        <br>
-        <label for="phone_number">Phone number:</label>
-        <br>
-        <input type="tel" id="phone_number" name="phone_number"
-               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="111-111-1111" required>
-        <br>
-        <label for="preferred_bg_color">Preferred background color:</label>
-        <br>
-        <input type="color" id="preferred_bg_color" name="preferred_bg_color" required>
-        <br>
-        <label for="country">Country:</label>
-        <br>
-        <input type="text" id="country" name="country" placeholder="Ukraine" required>
-        <br>
-        <label for="city">City:</label>
-        <br>
-        <input type="text" id="city" name="city" placeholder="Kyiv" required>
-        <br>
-        <label for="comment">Comment:</label>
-        <br>
-        <textarea id="comment" name="comment" cols="30" rows="5" 
-                  placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit" required></textarea>
-        <br>
+    <form id="registration-form" name="registration-form">
+        <div class="form-item">
+            <label for="full-name">Full name:</label><br>
+            <input type="text" id="full-name" name="full-name" placeholder="John Doe" required>
+        </div>
+        <div class="form-item">
+            <label for="sex">Sex:</label><br>
+            <select id="sex" name="sex" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <label for="birth-date">Date of birth:</label><br>
+            <input type="date" id="birth-date" name="birth-date" required>
+        </div>
+        <div class="form-item">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        </div>
+        <div class="form-item">
+            <label for="phone-number">Phone number:</label><br>
+            <input type="tel" id="phone-number" name="phone-number"
+                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="111-111-1111" required>
+        </div>
+        <div class="form-item">
+            <label for="preferred-bg-color">Preferred background color:</label><br>
+            <input type="color" id="preferred-bg-color" name="preferred-bg-color" required>
+        </div>
+        <div class="form-item">
+            <label for="country">Country:</label><br>
+            <input type="text" id="country" name="country" placeholder="Ukraine" required>
+        </div>
+        <div class="form-item">
+            <label for="city">City:</label><br>
+            <input type="text" id="city" name="city" placeholder="Kyiv" required>
+        </div>
+        <div class="form-item">
+            <label for="comment">Comment:</label><br>
+            <textarea id="comment" name="comment" cols="30" rows="5" 
+            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit" required></textarea>
+        </div>
         <button type="submit">Submit</button>
-        <button type="clear">Clear</button>
+        <button type="clear" formnovalidate>Clear</button>
     </form>
 </body>
 </html>
