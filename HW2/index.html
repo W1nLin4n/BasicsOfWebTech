@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product cart</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+	<main>
+		<section class="product-cart">
+			<section class="product-list-detailed">
+				<section class="product-addition-interface">
+					<input type="text" placeholder="Назва товару">
+					<button type="button" data-tooltip="Додати товар у список">Додати</button>
+				</section>
+				<article id="product-1" class="product bought">
+					<section class="product-name-section">
+						<span class="product-name">Помідори</span>
+					</section>
+					<section class="product-count-section">
+						<button type="button" class="count-button subtract" data-tooltip="Зменшити кількість товару">-</button>
+						<span class="product-count">2</span>
+						<button type="button" class="count-button add" data-tooltip="Збільшити кількість товару">+</button>
+					</section>
+					<section class="product-listing-section">
+						<button class="listing-button list-product-as-bought" data-tooltip="Додати товар до купленого">Куплено</button>
+						<button class="listing-button list-product-as-unbought" data-tooltip="Додати товар до некупленого">Не куплено</button>
+						<button class="delete-product" data-tooltip="Видалити товар зі списку">&times;</button>
+					</section>
+				</article>
+				<article id="product-2" class="product unbought">
+					<section class="product-name-section">
+						<span class="product-name">Печиво</span>
+					</section>
+					<section class="product-count-section">
+						<button type="button" class="count-button subtract" data-tooltip="Зменшити кількість товару">-</button>
+						<span class="product-count">2</span>
+						<button type="button" class="count-button add" data-tooltip="Збільшити кількість товару">+</button>
+					</section>
+					<section class="product-listing-section">
+						<button class="listing-button list-product-as-bought" data-tooltip="Додати товар до купленого">Куплено</button>
+						<button class="listing-button list-product-as-unbought" data-tooltip="Додати товар до некупленого">Не куплено</button>
+						<button class="delete-product" data-tooltip="Видалити товар зі списку">&times;</button>
+					</section>
+				</article>
+				<article id="product-3" class="product unbought single name-changing">
+					<section class="product-name-section">
+						<input class="product-name-input" value="Сир"/>
+					</section>
+					<section class="product-count-section">
+						<button type="button" class="count-button subtract" data-tooltip="Зменшити кількість товару">-</button>
+						<span class="product-count">1</span>
+						<button type="button" class="count-button add" data-tooltip="Збільшити кількість товару">+</button>
+					</section>
+					<section class="product-listing-section">
+						<button class="listing-button list-product-as-bought" data-tooltip="Додати товар до купленого">Куплено</button>
+						<button class="listing-button list-product-as-unbought" data-tooltip="Додати товар до некупленого">Не куплено</button>
+						<button class="delete-product" data-tooltip="Видалити товар зі списку">&times;</button>
+					</section>
+				</article>
+			</section>
+			<section class="product-list-compact">
+				<section class="header-products unbought">
+					<h2>Залишилося</h2>
+				</section>
+				<section class="products-list unbought">
+					<article id="product-compact-2" class="product-compact">
+						<span class="product-name">Печиво</span>
+						<span class="product-count">2</span>
+					</article>
+					<article id="product-compact-3" class="product-compact">
+						<span class="product-name">Сир</span>
+						<span class="product-count">1</span>
+					</article>
+				</section>
+				<section class="header-products bought">
+					<h2>Куплено</h2>
+				</section>
+				<section class="products-list bought">
+					<article id="product-compact-1" class="product-compact">
+						<span class="product-name">Помідори</span>
+						<span class="product-count">2</span>
+					</article>
+				</section>
+			</section>
+		</section>
+		
+	</main>
+	<article class="badge">
+		<span class="no-print header">Buy List</span>
+		<span class="show-on-hover print creator-header">Created by:</span>
+		<span class="show-on-hover print creator">Artem Hrechka</span>
+	</article>
+</body>
+</html>
