@@ -1,7 +1,13 @@
 html {
 	background-color: #dadada;
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 15px;
+	font-size: 10px;
+}
+
+@media (min-width: 400px) and (min-height: 400px) {
+	html {
+		font-size: 15px;
+	}
 }
 
 @media (min-width: 900px) and (min-height: 900px) {
