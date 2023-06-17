@@ -180,6 +180,11 @@ function drawItems() {
 function update() {
     clear();
     drawItems();
+    focusOnNameInput();
+    saveItems();
+}
+
+function focusOnNameInput() {
     if(document.getElementsByClassName("product-name-input")[0]) {
         document.getElementsByClassName("product-name-input")[0].focus();
     }
@@ -220,8 +225,21 @@ function addItem(name) {
     }
 }
 
-function main() {
-    items = [new Item("Помідори", 2, false, false), new Item("Печиво", 2, false, false), new Item("Сир", 2, false, false)];
+function saveItems() {
+    localStorage.setItem("items", JSON.stringify(items));
+}
+
+function loadItems() {
+    let data = localStorage.getItem("items");
+    if(data) {
+        items = JSON.parse(data);
+    }
+    if(!data || items.length == 0) {
+        items = [new Item("Помідори", 2, false, false), new Item("Печиво", 2, false, false), new Item("Сир", 2, false, false)];
+    }
+}
+
+function initElements() {
     listDetailed = document.getElementsByClassName("product-list-detailed")[0];
     listCompactBought = document.getElementsByClassName("products-list bought")[0];
     listCompactUnbought = document.getElementsByClassName("products-list unbought")[0];
@@ -239,6 +257,11 @@ function main() {
         update();
         productAdditionInput.focus();
     });
+}
+
+function main() {
+    loadItems();
+    initElements();
     update();
 }
 
