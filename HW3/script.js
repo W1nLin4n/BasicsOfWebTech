@@ -177,13 +177,6 @@ function drawItems() {
     }
 }
 
-function update() {
-    clear();
-    drawItems();
-    focusOnNameInput();
-    saveItems();
-}
-
 function focusOnNameInput() {
     if(document.getElementsByClassName("product-name-input")[0]) {
         document.getElementsByClassName("product-name-input")[0].focus();
@@ -259,10 +252,22 @@ function initElements() {
     });
 }
 
-function main() {
-    loadItems();
+function init() {
     initElements();
+    loadItems();
     update();
 }
 
-window.onload = main;
+function update() {
+    clear();
+    drawItems();
+    focusOnNameInput();
+    saveItems();
+}
+
+function dispose() {
+    saveItems();
+}
+
+window.onload = init;
+window.onunload = dispose;
