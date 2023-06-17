@@ -262,7 +262,6 @@ function update() {
     clear();
     drawItems();
     focusOnNameInput();
-    saveItems();
 }
 
 function dispose() {
