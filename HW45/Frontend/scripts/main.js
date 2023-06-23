@@ -181,6 +181,8 @@ var pizzaAmount;
 var cartItemAmount;
 var totalPrice;
 var clearCart;
+var pizzaTypeName;
+var pizzaFilteredAmount;
 
 function addToCart(id, size) {
     let exist = false;
@@ -308,35 +310,42 @@ function getHTMLForPizzaCartItem(item) {
 }
 
 function updatePizzaList() {
+    pizzaFilteredAmount = 0;
     let pizzaListHTML = "";
     for(pizza of pizzaInfo) {
         switch(filter) {
             case "all":
                 pizzaListHTML += getHTMLForPizzaCard(pizza);
+                pizzaFilteredAmount++;
                 break;
             case "meat":
                 if(pizza["content"].hasOwnProperty("meat") || pizza["content"].hasOwnProperty("chicken")) {
                     pizzaListHTML += getHTMLForPizzaCard(pizza);
+                    pizzaFilteredAmount++;
                 }
                 break;
             case "pineapple":
                 if(pizza["content"].hasOwnProperty("pineapple")) {
                     pizzaListHTML += getHTMLForPizzaCard(pizza);
+                    pizzaFilteredAmount++;
                 }
                 break;
             case "mushroom":
                 if(pizza["content"].hasOwnProperty("mushroom")) {
                     pizzaListHTML += getHTMLForPizzaCard(pizza);
+                    pizzaFilteredAmount++;
                 }
                 break;
             case "ocean":
                 if(pizza["content"].hasOwnProperty("ocean")) {
                     pizzaListHTML += getHTMLForPizzaCard(pizza);
+                    pizzaFilteredAmount++;
                 }
                 break;
             case "vega":
             if(!pizza["content"].hasOwnProperty("meat") && !pizza["content"].hasOwnProperty("chicken") && !pizza["content"].hasOwnProperty("ocean")) {
                 pizzaListHTML += getHTMLForPizzaCard(pizza);
+                pizzaFilteredAmount++;
             }
             break;
         }
@@ -384,8 +393,31 @@ function updateCart() {
     }
 }
 
+function updatePizzaTypeName() {
+    switch(filter) {
+        case "all":
+                pizzaTypeName.innerHTML = "Усі піци";
+                break;
+            case "meat":
+                pizzaTypeName.innerHTML = "М'ясні піци";
+                break;
+            case "pineapple":
+                pizzaTypeName.innerHTML = "Ананасові піци";
+                break;
+            case "mushroom":
+                pizzaTypeName.innerHTML = "Грибні піци";
+                break;
+            case "ocean":
+                pizzaTypeName.innerHTML = "Морські піци";
+                break;
+            case "vega":
+                pizzaTypeName.innerHTML = "Вега піци";
+                break;
+    }
+}
+
 function updatePizzaAmount() {
-    pizzaAmount.innerHTML = pizzaInfo.length;
+    pizzaAmount.innerHTML = pizzaFilteredAmount;
 }
 
 function updateCartItemAmount() {
@@ -444,7 +476,8 @@ function init() {
     });
     cart = document.getElementsByClassName("cart")[0];
     pizzaList = document.getElementsByClassName("pizza-list")[0];
-    pizzaAmount = document.getElementsByTagName("main")[0].getElementsByClassName("total")[0];
+    pizzaTypeName = document.getElementsByTagName("main")[0].getElementsByClassName("header-block")[0].getElementsByTagName("h1")[0];
+    pizzaAmount = document.getElementsByTagName("main")[0].getElementsByClassName("header-block")[0].getElementsByClassName("total")[0];
     cartItemAmount = document.getElementsByClassName("order")[0].getElementsByClassName("info")[0].getElementsByClassName("total")[0];
     totalPrice = order.getElementsByClassName("payment")[0].getElementsByClassName("total")[0];
     initFilters();
@@ -455,6 +488,7 @@ function init() {
 function update() {
     updatePizzaList();
     updateCart();
+    updatePizzaTypeName();
     updatePizzaAmount();
     updateCartItemAmount();
     updateTotalPrice();
