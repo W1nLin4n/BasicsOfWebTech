@@ -15,6 +15,14 @@
 :root {
     font-size: @default-font-size;
     scrollbar-width: thin;
+    
+    @media (max-width: 500px) {
+        font-size: calc(0.8 * @default-font-size);
+    }
+
+    @media (max-width: 350px) {
+        font-size: calc(0.5 * @default-font-size);
+    }
 }
 
 body {
@@ -106,10 +114,6 @@ header {
 
             .phone {
                 font-size: 1.5rem;
-
-                @media (max-width: 550px) {
-                    font-size: 1rem;
-                }
             }
 
             .worktime {
@@ -184,7 +188,7 @@ main {
         h1 {
             margin: 0;
     
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: black;
     
         }
@@ -515,7 +519,7 @@ main {
             padding: 0.5rem 0 0.5rem 1.5rem;
 
             box-sizing: border-box;
-            height: 20%;
+            height: 10rem;
             width: 100%;
 
             background-color: @gray-light;
@@ -524,12 +528,15 @@ main {
             .data {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: space-around;
                 align-items: flex-start;
                 flex-grow: 1;
 
+                box-sizing: border-box;
+                height: 80%;
+
                 h2 {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     color: @orange-darker;
                     margin: 0;
                 }
@@ -541,6 +548,13 @@ main {
                     align-items: center;
                     gap: 1rem;
                     font-size: 1rem;
+
+                    .size, .weight {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
 
                 .item-amount {
